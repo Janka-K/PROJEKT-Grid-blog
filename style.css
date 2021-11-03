@@ -1,38 +1,45 @@
 /* nejsme vcerejsi, pouzivame moderni box model */
-html { box-sizing: border-box; }
-*, :after, :before { box-sizing: inherit; }
-
-
-body {
-	margin: 0;
-	padding: 30px;
-	font-family:  'Alice', serif;
-	font-size: 18px;
-	line-height: 1.5;
+html {
+  box-sizing: border-box;
+}
+*,
+:after,
+:before {
+  box-sizing: inherit;
 }
 
-h1, h2, h3 {
-	font-family: 'Kaushan Script', cursive;
-	font-weight: normal;
-	margin: 0;
+body {
+  margin: 0;
+  padding: 30px;
+  font-family: "Alice", serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Kaushan Script", cursive;
+  font-weight: normal;
+  margin: 0;
 }
 
 blockquote {
-	font-family: 'Kaushan Script', cursive;
+  font-family: "Kaushan Script", cursive;
 }
 
 /* --------------------------------------------------- */
 
 /* barvy */
 :root {
-	--svetla: #edf3f5;
-	--seda: #b2bec3;
-	--tmava: #636e72;
-	--oranzova: #ee5a24;
-	--cervena: #ea2027;
-	--zluta: #f79f1f;
-	--zelena: #a3cb38;
-	--limetka: #c4e538;
+  --svetla: #edf3f5;
+  --seda: #b2bec3;
+  --tmava: #636e72;
+  --oranzova: #ee5a24;
+  --cervena: #ea2027;
+  --zluta: #f79f1f;
+  --zelena: #a3cb38;
+  --limetka: #c4e538;
 }
 
 /*
@@ -66,3 +73,137 @@ blockquote {
 	- https://www.smashingmagazine.com/2017/04/start-using-css-custom-properties/
 */
 
+.blog {
+  display: grid;
+  grid-template-columns: 1fr 4fr 2fr;
+  column-gap: 40px;
+}
+
+h2 {
+  color: #a3cb38;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  font-size: 30px;
+  grid-column: 2 / span 1;
+}
+
+header,
+p {
+  grid-column: 2/3;
+}
+
+.meta {
+  color: #b2bec3;
+  font-size: 11px;
+}
+
+h1 {
+  grid-column: 2;
+  color: #c4e538;
+  font-size: 58px;
+  margin-bottom: 40px;
+}
+
+figure {
+  grid-column: 1/ 5;
+  margin-left: 0;
+}
+
+figcaption {
+  color: #b2bec3;
+  font-size: 11px;
+}
+
+figure img {
+  width: 100%;
+}
+
+.tip-vlevo {
+  grid-column: 1;
+  color: #636e72;
+}
+
+.tip-vlevo p {
+  background-color: #edf3f5;
+  font-size: 12px;
+  text-align: center;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  border-right: 3px solid #f79f1f;
+  margin: 0;
+  text-align: right;
+  padding-right: 10px;
+}
+
+p {
+  margin-top: 0;
+  font-size: 14px;
+}
+
+.tip-vlevo img {
+  max-width: 100%;
+  grid-column: 1;
+  justify-self: center;
+  padding: 10px;
+  background-color: #edf3f5;
+  display: block;
+  border-right: 3px solid #f79f1f;
+}
+
+blockquote {
+  grid-column: 1 / -1;
+  color: #b2bec3;
+  font-size: 24px;
+  margin-left: 0;
+  margin-right: 0;
+  justify-self: center;
+}
+
+blockquote::before {
+  content: "";
+  width: 60px;
+  height: 2px;
+  background-color: #c4e538;
+  display: block;
+  margin: auto;
+  margin-bottom: 15px;
+}
+
+blockquote::after {
+  content: "";
+  width: 60px;
+  height: 2px;
+  background-color: #c4e538;
+  display: block;
+  margin: auto;
+  margin-top: 15px;
+}
+
+.tip-vpravo {
+  grid-column: 3 / span 1;
+  color: #636e72;
+}
+
+.tip-vpravo p {
+  background-color: #edf3f5;
+  font-size: 12px;
+  text-align: left;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 13px;
+  border-left: 3px solid #f79f1f;
+  margin: 0;
+}
+
+footer {
+  grid-column: 2;
+}
+
+footer p {
+  color: #b2bec3;
+  font-size: 11px;
+}
+
+footer a {
+  color: #b2bec3;
+}
